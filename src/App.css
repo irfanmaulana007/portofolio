@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.pt-nav{
+	padding-top: 106px;
+}
+
+.bg-grey {
+	background-color: #22262a!important;
+}
+
+.bg-section2 {
+	background-color: #f2f2f2!important;
+}
