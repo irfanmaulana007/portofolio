@@ -24,11 +24,11 @@ class index extends Component {
 							<form>
 								<div className="form-group">
 									<label htmlFor="Email" className="text-muted small">Email</label>
-									<input type="email" className="form-control" id="email" autocomplete="off" />
+									<input type="email" className="form-control" id="email" autoComplete="off" />
 								</div>
 								<div className="form-group">
 									<label htmlFor="Subject" className="text-muted small">Subject</label>
-									<input type="text" className="form-control" id="subject" autocomplete="off" />
+									<input type="text" className="form-control" id="subject" autoComplete="off" />
 								</div>
 								<div className="form-group">
 									<label htmlFor="Message" className="text-muted small">Message</label>

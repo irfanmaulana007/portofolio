@@ -1,0 +1,11 @@
+.intro{
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -44px 0 0 -300px;
+}
+
+.background{
+	background-image: url('https://images.wallpaperscraft.com/image/ipad_iphone_pens_notepads_coffee_starbucks_83901_1366x768.jpg');
+}
