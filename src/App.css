@@ -4,10 +4,18 @@ html {
 
 body {
   height: 100%;
+  font-size: 14px!important;
 }
 
 .pt-nav{
 	padding-top: 106px;
+}
+.pb-nav{
+	padding-bottom: 106px;
+}
+
+.bg-theme {
+	background-image: url('./assets/img/bg.png');
 }
 
 .bg-grey {
@@ -19,5 +27,16 @@ body {
 }
 
 .bg-section2 {
-	background-color: #f2f2f2!important;
+	background-color: #22262a!important;
+	color: #fff;
+}.bg-section2 hr{
+	border-color: #fff!important;
+}
+
+ul.list-tech {
+	margin-top: 30px;
+}
+ul.list-tech li {
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
