@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import { Redirect } from 'react-router-dom'
 import store from './../../store'
@@ -15,38 +16,36 @@ class Login extends Component {
 			username: '',
 			password: '',
 			response: {
-				status: '',
-				title: '',
 				message: ''
 			},
-			showAlert:false,
+			showAlert: false,
 		}
 	}
 
 	login = (e) => {
 		e.preventDefault()
 		this.setState({error: ''})
-		// store.dispatch(startLoading("Logging in . . ."))
-		// authService.login(this.state)
-		// .then((res) => {
-		// 	if (res.data.status === 'success') {
-		// 		localStorage.setItem('id', res.data.user.id);
-		// 		localStorage.setItem('name', res.data.user.name);
-		// 		localStorage.setItem('username', res.data.user.username);
-		// 		this.props.history.push('/sync')
-		// 	} else {
-		// 		this.setState({
-		// 			response: {
-		// 				status: res.data.status,
-		// 				title: res.data.title,
-		// 				message: res.data.message,
-		// 			},
-		// 			showAlert: true
-		// 		})
-		// 	}
-		// })
-		// .catch((err) => { alert(err) })
-		// .finally(() => { store.dispatch(stopLoading()) })
+		store.dispatch(startLoading("Logging in . . ."))
+		authService.login({username: this.state.username, password: this.state.password})
+		.then((res) => {
+			console.log('res: ', res);
+			if (res.data.login === true) {
+				localStorage.setItem('id', res.data.user.userId);
+				localStorage.setItem('name', res.data.user.name);
+				localStorage.setItem('username', res.data.user.username);
+				localStorage.setItem('email', res.data.user.email);
+				this.props.history.push('/dashboard')
+			} else {
+				this.setState({
+					response: {
+						message: res.data.message
+					},
+					showAlert: true
+				})
+			}
+		})
+		.catch((err) => { alert(err) })
+		.finally(() => { store.dispatch(stopLoading()) })
 	}
 
 	handleInput = (e) => {
@@ -54,14 +53,14 @@ class Login extends Component {
 	}
 
 	render () {
-		// const user = localStorage.getItem('username');
-	    // if (user !== null) {
-	    //    return <Redirect to='/sync'/>;
-		// }
+		const user = localStorage.getItem('userId');
+	    if (user !== null) {
+	    	return <Redirect to='/dashboard'/>;
+		}
 
 		return (
 			<div className="bg-theme h-100">
-				<div id="content" className="pt-nav mt-5 small">
+				<div id="content" className="pt-nav small">
 					<div className="col-md-6 offset-md-3 card p-5">
 						<h3 className="text-center">Login</h3>
 						<br/>
@@ -69,20 +68,26 @@ class Login extends Component {
 							<FormGroup name='username' type='text' change={this.handleInput} focus="on" />
 							<FormGroup name='password' type='password' change={this.handleInput} />
 							
-							{/* {
+							{
 								(this.state.showAlert)
 								?
 								(
-									<Alert variant={this.state.response.status} onClose={this.handleCloseAlert} dismissible>
-										<strong className="text-uppercase mr-1">{this.state.response.title}!</strong> {this.state.response.message}
+									// this.state.response.message
+									<Alert variant='danger' onClose={this.handleCloseAlert} dismissible>
+										<strong className="mr-1">Login Failed!</strong> {this.state.response.message}
 									</Alert>
 								)
 								: ''
-							} */}
+							}
 							<br/>
 
 							<div className="form-group">
 								<button type="button" className="btn btn-primary btn-block" onClick={this.login}>Login</button>
+							</div>
+							<div className="text-center">
+								<NavLink to ='/'>
+									<span className="nav-link">back to home</span>
+								</NavLink>
 							</div>
 						</form>
 					</div>

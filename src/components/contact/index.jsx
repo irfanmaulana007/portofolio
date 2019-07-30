@@ -1,16 +1,42 @@
 import React, { Component } from 'react';
-import swal from './../../../node_modules/sweetalert/dist/sweetalert.min.js'
+import swal from 'sweetalert/dist/sweetalert.min.js'
 import Title from '../title/Title'
 
+import { contactService } from './../../common/api.service'
+
+
+let initialState = {
+	email: '',
+	subject: '',
+	message: ''
+}
 class index extends Component {
-	submit(){
-		swal({
-			title: 'Mail sent',
-			text: 'Thankyou for your mail, we will response as soon as possible to your email.',
-			icon: 'success',
-		  timer: 5000
-		})
+	constructor(props){
+		super(props)
+		this.state = initialState
 	}
+
+	sendContact = (e) => {
+		if (this.state.email !== '' && this.state.subject !== '' && this.state.message !== '') {
+			e.preventDefault()
+			contactService.send(this.state)
+			.then(() => {
+				swal({
+					title: 'Mail sent',
+					text: 'Thankyou for your mail, we will response as soon as possible to your email.',
+					icon: 'success',
+					timer: 5000
+				})
+				
+				this.setState({...initialState})
+			})
+			.catch((err) => { console.log(err.response) })
+		}
+	}
+
+	handleChange = (e) => {
+		this.setState({ [e.target.name]: e.target.value })
+	} 
 
 	render () {
 		return (
@@ -23,18 +49,18 @@ class index extends Component {
 							<form>
 								<div className="form-group">
 									<label htmlFor="Email" className="text-muted small">Email</label>
-									<input type="email" className="form-control" id="email" autoComplete="off" />
+									<input type="email" className="form-control" name="email" required="yes" autoComplete="off" value={this.state.email} onChange={this.handleChange} />
 								</div>
 								<div className="form-group">
 									<label htmlFor="Subject" className="text-muted small">Subject</label>
-									<input type="text" className="form-control" id="subject" autoComplete="off" />
+									<input type="text" className="form-control" name="subject" required="yes" autoComplete="off" value={this.state.subject} onChange={this.handleChange} />
 								</div>
 								<div className="form-group">
 									<label htmlFor="Message" className="text-muted small">Message</label>
-									<textarea className="form-control" id="message" rows="5"></textarea>
+									<textarea className="form-control" name="message" rows="5" required="yes"  value={this.state.message} onChange={this.handleChange}></textarea>
 								</div>
 								<div className="form-group">
-									<center><button className="btn btn-block btn-primary" onClick={this.submit}>Send mail</button></center>
+									<center><button className="btn btn-block btn-primary" onClick={this.sendContact}>Send mail</button></center>
 								</div>
 							</form>
 						</div>

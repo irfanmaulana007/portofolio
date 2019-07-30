@@ -11,16 +11,7 @@ class index extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			project: [
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'},
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'},
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'},
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'},
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'},
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'},
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'},
-				{title: 'asdf', description: 'desc', img: 'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/112011/the_beatles.gif?itok=94lM7aXm'}
-			]
+			project: []
 		}
 	}
 

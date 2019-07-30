@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import store from './store'
 
@@ -12,6 +12,7 @@ import Loaders from './components/utils/Loaders'
 // Views
 import Main from './views/Index'
 import Login from './views/admin/Login'
+import Dashboard from './views/admin/Dashboard'
 import NotFound from './views/NotFound'
 
 class App extends Component {
@@ -31,7 +32,10 @@ class App extends Component {
 				<div className="h-100">
 					<Switch>
 						<Route exact path="/" component={Main} />
+						
+						{/* Admin */}
 						<Route exact path="/login" component={Login} />
+						<Route exact path="/dashboard" component={Dashboard} />
 
 						<Route path="*" component={NotFound} />
 					</Switch>

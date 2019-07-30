@@ -44,3 +44,15 @@ export const projectService = {
 			.get('get-project')
 	}
 }
+
+export const contactService = {
+	get () {
+		return apiService
+			.get('contact')
+	},
+
+	send (payload) {
+		return apiService
+			.post('contact', payload)
+	}
+}

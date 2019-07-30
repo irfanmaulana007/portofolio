@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom'
 
 window.onscroll = () => {
 	var nav = document.getElementById('nav')
-	if (window.pageYOffset > 80) {
-	  nav.classList.remove('top')
-	} else {
-	  nav.classList.add('top')
+	if (nav !== null) {
+		if (window.pageYOffset > 80) {
+			nav.classList.remove('top')
+		} else {
+			nav.classList.add('top')
+		}
 	}
 }
 
