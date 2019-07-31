@@ -3,7 +3,7 @@ import swal from 'sweetalert/dist/sweetalert.min.js'
 import Title from '../title/Title'
 
 import { contactService } from './../../common/api.service'
-
+import FormGroup from './../../components/utils/FormGroup'
 
 let initialState = {
 	email: '',
@@ -46,19 +46,11 @@ class index extends Component {
 						<div className="col-6 offset-3">
 							<Title text="Drop a line" />
 							<br/>
-							<form>
-								<div className="form-group">
-									<label htmlFor="Email" className="text-muted small">Email</label>
-									<input type="email" className="form-control" name="email" required="yes" autoComplete="off" value={this.state.email} onChange={this.handleChange} />
-								</div>
-								<div className="form-group">
-									<label htmlFor="Subject" className="text-muted small">Subject</label>
-									<input type="text" className="form-control" name="subject" required="yes" autoComplete="off" value={this.state.subject} onChange={this.handleChange} />
-								</div>
-								<div className="form-group">
-									<label htmlFor="Message" className="text-muted small">Message</label>
-									<textarea className="form-control" name="message" rows="5" required="yes"  value={this.state.message} onChange={this.handleChange}></textarea>
-								</div>
+							<form className="small">
+								<FormGroup name='email' type='email' value={this.state.email} change={this.handleChange} required="yes" autocomplete="off" />
+								<FormGroup name='subject' type='text' value={this.state.subject} change={this.handleChange} required="yes" autocomplete="off" />
+								<FormGroup name='message' type='textarea' value={this.state.message} change={this.handleChange} required="yes" autocomplete="off" />
+
 								<div className="form-group">
 									<center><button className="btn btn-block btn-primary" onClick={this.sendContact}>Send mail</button></center>
 								</div>
