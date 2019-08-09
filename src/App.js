@@ -1,35 +1,48 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import store from './store'
 
 // Styles
 import './App.css'
 
 // Components
-import Section1 from './components/section1/index'
-import Section2 from './components/section2/index'
-import Section3 from './components/section3/index'
-import Section4 from './components/section4/index'
-import Section5 from './components/section5/index'
-import Section6 from './components/section6/index'
+import Loaders from './components/utils/Loaders'
+
+// Views
+import Main from './views/Index'
+import Login from './views/admin/Login'
+import Dashboard from './views/admin/Dashboard'
+import NotFound from './views/NotFound'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="h-100">
+	constructor(props){
+		super(props)
+		this.state = store.getState().utils
 
-        <Section1 />
+		store.subscribe (() => {
+			this.setState(store.getState().utils)
+		})
+	}
 
-        <Section2 />
+	render() {
+		return (
+			<Router>
+				<Loaders display={this.state.loaders} message={this.state.message} />
+				<div className="h-100">
+					<Switch>
+						<Route exact path="/" component={Main} />
+						
+						{/* Admin */}
+						<Route exact path="/login" component={Login} />
+						<Route exact path="/dashboard" component={Dashboard} />
 
-        <Section3 />
-
-        <Section4 />
-        
-        <Section5 />
-        
-        <Section6 />
-      </div>
-    );
-  }
+						<Route path="*" component={NotFound} />
+					</Switch>
+				</div>
+			</Router>
+		);
+	}
 }
 
-export default App;
+export default App

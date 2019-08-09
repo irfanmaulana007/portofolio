@@ -1,0 +1,50 @@
+nav {
+    transition: .4s;
+}
+nav {
+    opacity: .97;
+    height: 50px;
+}
+nav.top {
+    background-color: transparent!important;
+    height: 70px;
+}
+nav.top ul a{
+    color: #fff!important;
+}
+
+.intro{
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -44px 0 0 -300px;
+}
+
+.text-underline { text-decoration: underline; }
+
+.background{
+    /* background-image: url('/src/assets/img/bg.png'); */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.background img {
+    height: 100%;
+    width: 100%;
+}
+
+.btn { font-size: 14px!important; }
+.btn.btn-outline {
+    background-color: rgba(255, 255, 255, .5);
+    color: #fff;
+}
+.btn.btn-outline:hover {
+    color: #fff;
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+/* h6 { font-size: 16px!important; } */
