@@ -1,0 +1,32 @@
+#sidenav {
+	height: 100%;
+	padding: 20px 0;
+	width: 100%;
+	background-color: #22262a!important;
+}
+
+#sidenav a:hover { text-decoration: none; }
+#sidenav a.active .nav-item { color: #fff; }
+
+#sidenav .nav-item {
+	padding: 10px 20px;
+	width: 100%;
+	color: #999;
+	border-bottom: 1px solid #999;
+	font-size: 14px;
+	transition: .2s ease;
+}
+#sidenav .nav-item.border-top {
+	border-top: 1px solid #999!important;
+}
+#sidenav .nav-item.active, #sidenav .nav-item:hover {
+	color: #fff;
+}
+
+#sidenav .nav-item.bottom {
+	bottom: 0;
+	box-sizing: border-box!important;
+	position: absolute;
+	border-bottom: none;
+	cursor: pointer;
+}

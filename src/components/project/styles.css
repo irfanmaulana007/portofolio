@@ -1,0 +1,33 @@
+.card .hoverable {
+    background-color: transparent;
+    color: transparent;
+    z-index: 10;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.card .hoverable p {
+    height: 100px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.card .hoverable:hover {
+    background-color: rgba(0, 0, 0, .75);
+    color: white;
+    transition: .1s ease-in;
+}
+
+.card .hoverable .content {
+    margin-top: 30px;
+}
+
+.card .hoverable:hover .content {
+    /* color: white; */
+    margin-top: 0;
+    transition: .4s ease;
+}
