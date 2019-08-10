@@ -6,10 +6,15 @@ import './styles.css'
 class index extends Component {
 	render () {
 		return (
-			<div id="service" className="pt-nav pb-nav bg-section2">
+			<div id="service" className="pt-nav pb-nav parallax bg-section2">
+				<div className="bg-blur"></div>
 				<div className="container">
-					<Title text="Service" />
-					<br/>
+					<div className="row">
+						<div className="col">
+							<Title text="Service" />
+						</div>
+					</div>
+					<br/><br/><br/>
 					<div className="row">
 						<div className="col-3">
 							<div className="service-item">
@@ -34,7 +39,7 @@ class index extends Component {
 								<div className="content">
 									<br/>
 									<i className="fa fa-trash mb-2"></i>
-									<p>Slicing</p>
+									<p>Slicing <br/> from Mockup</p>
 								</div>
 							</div>
 						</div>
@@ -45,7 +50,7 @@ class index extends Component {
 								<div className="content">
 									<br/>
 									<i className="fa fa-trash mb-2"></i>
-									<p>Building<br/> Website Portofolio</p>
+									<p>Web Service<br/> RESTful APIs</p>
 								</div>
 							</div>
 						</div>

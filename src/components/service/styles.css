@@ -1,3 +1,7 @@
+#service {
+    background-image: url('../../assets/img/bg2.jpeg');
+}
+
 .service-item {
     width: 200px;
     height: 200px;
@@ -16,4 +20,8 @@
 }
 .mt-m5 {
     margin-top: -50px;
+}
+
+.container {
+    z-index: 20;
 }

@@ -1,25 +1,19 @@
 import React, { Component } from 'react'
+import { NavLink, Redirect } from 'react-router-dom'
 import swal from 'sweetalert/dist/sweetalert.min.js'
-import { NavLink } from 'react-router-dom'
 
-import { Redirect } from 'react-router-dom'
 import store from './../../store'
-
 import { startLoading, stopLoading } from './../../actions'
 import { authService } from './../../common/api.service'
+import { setToken, setUserID, setUsername } from './../../common/jwt.service'
 import FormGroup from './../../components/utils/FormGroup'
 
 class Login extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			username: '',
-			password: '',
-			response: {
-				status: '',
-				message: ''
-			},
-			showAlert: false,
+			username: 'irfanmaulana007',
+			password: 'password',
 		}
 	}
 
@@ -28,35 +22,14 @@ class Login extends Component {
 			e.preventDefault()
 			this.setState({error: ''})
 			store.dispatch(startLoading("Logging in . . ."))
-			authService.login({username: this.state.username, password: this.state.password})
+			authService.login(this.state)
 			.then((res) => {
-				if (res.data.response.login === true) {
-					localStorage.setItem('id', res.data.userId);
-					localStorage.setItem('name', res.data.name);
-					localStorage.setItem('username', res.data.username);
-					localStorage.setItem('email', res.data.email);
-					this.props.history.push('/dashboard')
-				} else {
-					this.setState({
-						response: {
-							status: res.data.response.status,
-							message: res.data.response.message
-						},
-						showAlert: true
-					})
-				}
+				setToken(res.token)
+				setUserID(res.user.id)
+				setUsername(res.user.username)
 				
-				let alertIcon = this.state.response.status
-				if (this.state.response.status === 'failed') { alertIcon = 'error' }
-				console.log(this.state.response);
-				swal({
-					title: 'Login ' + this.state.response.status,
-					text: this.state.response.message,
-					icon: alertIcon,
-					timer: 5000
-				})
+				this.props.history.push('admin/dashboard')
 			})
-			.catch((err) => { alert(err) })
 			.finally(() => { store.dispatch(stopLoading()) })
 		}
 	}
@@ -78,8 +51,8 @@ class Login extends Component {
 						<h3 className="text-center">Login</h3>
 						<br/>
 						<form>
-							<FormGroup name='username' type='text' change={this.handleInput} required="yes" focus="on" />
-							<FormGroup name='password' type='password' change={this.handleInput} required="yes" />
+							<FormGroup name='username' type='text' change={this.handleInput} value={this.state.username} required="yes" focus="on" />
+							<FormGroup name='password' type='password' change={this.handleInput} value={this.state.password} required="yes" />
 
 							<br/>
 

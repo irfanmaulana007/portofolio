@@ -12,8 +12,8 @@ class index extends Component {
 	render () {
 		return (
       <div id="/" className="h-100 bg-grey pt-nav">
-        <div className="background">
-          <img src={background} alt=""/>
+        <div className="background parallax">
+          {/* <img src={background} alt=""/> */}
         </div>
         <div className="text-white intro">
           <h5 className="text-center intro-text">

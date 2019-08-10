@@ -24,17 +24,15 @@ nav.top ul a{
 .text-underline { text-decoration: underline; }
 
 .background{
-    /* background-image: url('/src/assets/img/bg.png'); */
-    height: 100%;
-    width: 100%;
+    background-image: url('../../assets/img/bg.png');
     position: absolute;
+    height: 100%;
     top: 0;
-    left: 0;
 }
-.background img {
+/* .background img {
     height: 100%;
     width: 100%;
-}
+} */
 
 .btn { font-size: 14px!important; }
 .btn.btn-outline {

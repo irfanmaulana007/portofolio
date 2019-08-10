@@ -5,5 +5,5 @@ h4 {
 hr {
     width: 60px;
     border-top-color: #000!important;
-    margin: 10px!important 0;
+    margin: 10px auto;
 }

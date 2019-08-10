@@ -6,12 +6,31 @@ body {
   height: 100%;
   font-size: 14px!important;
 }
+.parallax {
+    width: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-blur {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	margin-top: -60px;
+	background-color: rgba(0, 0, 0, .6);
+	z-index: 0;
+}
+
+.row { margin: 0!important;}
 
 .pt-nav{
-	padding-top: 106px;
+	padding-top: 60px;
 }
 .pb-nav{
-	padding-bottom: 106px;
+	padding-bottom: 60px;
 }
 
 .bg-theme {

@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
 import Title from '../title/Title'
+import './styles.css'
 
 class index extends Component {
 	render () {
 		return (
-			<div id="tech-stack" className="pt-nav pb-nav bg-section2">
+			<div id="tech-stack" className="pt-nav pb-nav bg-section2 parallax">
+				<div className="bg-blur"></div>
 				<div className="container">
 					<Title text="Tech Stack" />
 					<br/>

@@ -22,7 +22,7 @@ class FormGroup extends Component {
 					(
 						<input
 							className="form-control" 
-							autoComplete="off"
+							autoComplete={this.props.autoComplete}
 							type={this.props.type}
 							name={this.props.name}
 							value={this.props.value}

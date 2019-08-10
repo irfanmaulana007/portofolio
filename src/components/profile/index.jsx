@@ -61,8 +61,8 @@ class index extends Component {
                   <h6><b>{this.state.company}</b></h6>
                 </div>
                 <div className="col-6">
-                  <h6 className="mt-3 mb-0 text-muted small">Fullname</h6>
-                  <h6><b>Irfan Maulana</b></h6>
+                  <h6 className="mt-3 mb-0 text-muted small">Experience</h6>
+                  <h6><b>1 year 10 month</b></h6>
 
                   <h6 className="mt-3 mb-0 text-muted small">Fullname</h6>
                   <h6><b>Irfan Maulana</b></h6>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import swal from 'sweetalert/dist/sweetalert.min.js'
 import Title from '../title/Title'
 
+import store from  './../../store'
+import { startLoading, stopLoading } from './../../actions'
 import { contactService } from './../../common/api.service'
 import FormGroup from './../../components/utils/FormGroup'
 
@@ -19,6 +21,7 @@ class index extends Component {
 	sendContact = (e) => {
 		if (this.state.email !== '' && this.state.subject !== '' && this.state.message !== '') {
 			e.preventDefault()
+			store.dispatch(startLoading('Sending Mail . . .'))
 			contactService.send(this.state)
 			.then(() => {
 				swal({
@@ -31,6 +34,7 @@ class index extends Component {
 				this.setState({...initialState})
 			})
 			.catch((err) => { console.log(err.response) })
+			.finally(() => { store.dispatch(stopLoading()) })
 		}
 	}
 

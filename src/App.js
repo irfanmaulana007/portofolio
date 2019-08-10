@@ -35,7 +35,7 @@ class App extends Component {
 						
 						{/* Admin */}
 						<Route exact path="/login" component={Login} />
-						<Route exact path="/dashboard" component={Dashboard} />
+						<Route exact path="/admin/dashboard" component={Dashboard} />
 
 						<Route path="*" component={NotFound} />
 					</Switch>
