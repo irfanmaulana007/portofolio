@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import Moment from 'react-moment';
-import noImage from './../../assets/img/noimg.jpg'
+import Moment from 'react-moment'
 import './styles.css'
 
 class Project extends Component {
 	render () {
 		const { data } = this.props
+		if (data.image === '') { data.image = 'noimg.jpg' }
 		return (
 			<div className="col-3 pb-5">
 				<div className="card">
@@ -20,7 +20,9 @@ class Project extends Component {
 								<p>{data.description}</p>
 							</div>
 						</div>
-						<img src={noImage} alt="" height="200px" width="100%" />
+						<center>
+							<img src={require(`./../../assets/img/project/${data.image}`)} alt="" height="200px" width="200px" />
+						</center>
 					</div>
 				</div>
 				{/* <div className="card">

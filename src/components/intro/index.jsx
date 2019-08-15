@@ -30,8 +30,12 @@ class index extends Component {
           </h5>
           <br /><br /><br /><br /><br />
           <div className="text-center">
-            <button className="btn btn-danger mr-3">I need a website</button>
-            <button className="btn btn-outline">I'm looking to hire</button>
+            <a href="#contact">
+              <button className="btn btn-danger mr-3">I need a website</button>
+            </a>
+            <a href="#contact">
+              <button className="btn btn-outline">I'm looking to hire</button>
+            </a>
           </div>
           <br/>
           <div className="text-center">

@@ -22,5 +22,5 @@ ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
 
 export const scroll = SmoothScroll('a[href*="#"]', {
-	speed: 800
+	speed: 400,
 });

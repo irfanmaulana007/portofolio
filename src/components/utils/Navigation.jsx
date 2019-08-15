@@ -23,7 +23,7 @@ class Navigation extends Component {
 				  		<a href="/#profile" className="nav-link">Profile</a>
 	  				</li>
 	  				<li className="nav-item ml-2 mr-2">
-				  		<a href="/#service" className="nav-link">Service</a>
+				  		<a href="/#skill" className="nav-link">Skill</a>
 	  				</li>
 	  				<li className="nav-item ml-2 mr-2">
 				  		<a href="/#project" className="nav-link">Project</a>

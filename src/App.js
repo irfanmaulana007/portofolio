@@ -13,6 +13,7 @@ import Loaders from './components/utils/Loaders'
 import Main from './views/Index'
 import Login from './views/admin/Login'
 import Dashboard from './views/admin/Dashboard'
+import ProjectView from './views/admin/project/index'
 import NotFound from './views/NotFound'
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
 						{/* Admin */}
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/admin/dashboard" component={Dashboard} />
+						<Route exact path="/admin/project" component={ProjectView} />
 
 						<Route path="*" component={NotFound} />
 					</Switch>

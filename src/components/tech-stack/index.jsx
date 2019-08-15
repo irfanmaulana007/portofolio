@@ -9,7 +9,11 @@ class index extends Component {
 			<div id="tech-stack" className="pt-nav pb-nav bg-section2 parallax">
 				<div className="bg-blur"></div>
 				<div className="container">
-					<Title text="Tech Stack" />
+					<div className="row">
+						<div className="col">
+							<Title text="Tech Stack" />
+						</div>
+					</div>
 					<br/>
 					<div className="row text-center">
 						<div className="col border-right">

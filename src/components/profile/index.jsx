@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Moment from 'react-moment'
 
 import { profileService } from '../../common/api.service'
 import store from '../../store'
@@ -16,6 +17,17 @@ class index extends Component {
     profileService.get()
     .then((res) => {
       const data = res.data
+      const exp = data.workStartDate
+      const date = new Date()
+      const currentYear = date.getFullYear()
+      const currentMonth = date.getMonth()
+      const year = parseInt(exp.substring(0,4))
+      const month = parseInt(exp.substring(5,7))
+      const experience = (currentYear - year) + ' year ' + (currentMonth - month) + ' month'
+      console.log(year);
+      console.log(currentYear);
+      console.log(month);
+      console.log(currentMonth);
       this.setState({
         city: data.city,
         company: data.company,
@@ -24,6 +36,8 @@ class index extends Component {
         email: data.email,
         fullname: data.fullname,
         job: data.job,
+        status: data.status,
+        workStartDate: experience,
       })
     })
     .catch((err) => { console.log(err) })
@@ -62,16 +76,13 @@ class index extends Component {
                 </div>
                 <div className="col-6">
                   <h6 className="mt-3 mb-0 text-muted small">Experience</h6>
-                  <h6><b>1 year 10 month</b></h6>
+                  <h6><b>{this.state.workStartDate}</b></h6>
 
-                  <h6 className="mt-3 mb-0 text-muted small">Fullname</h6>
-                  <h6><b>Irfan Maulana</b></h6>
+                  <h6 className="mt-3 mb-0 text-muted small">Date of Birth</h6>
+                  <h6><b><Moment format="DD MMMM YYYY">{this.state.dob}</Moment></b></h6>
 
-                  <h6 className="mt-3 mb-0 text-muted small">Fullname</h6>
-                  <h6><b>Irfan Maulana</b></h6>
-
-                  <h6 className="mt-3 mb-0 text-muted small">Fullname</h6>
-                  <h6><b>Irfan Maulana</b></h6>
+                  <h6 className="mt-3 mb-0 text-muted small">status</h6>
+                  <h6><b>{this.state.status}</b></h6>
                 </div>
               </div>
 
@@ -83,11 +94,11 @@ class index extends Component {
           <div className="row">
             <div className="col">
               <p>
-                hello there, my name is <b>Irfan</b>, <strike>some people call me <b>gembel</b></strike> ... 
+              I start learn programming languange since senior highschool. I love software engineering and i like to learn something new technology day by day.
               </p>
 
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae tenetur architecto, distinctio repellat, voluptate impedit dolor ad veritatis nam ratione maiores ea dicta iusto modi ipsa magni. Nulla, qui minus.
+              Experienced Full Stack Developer focus on ReactJS & Laravel. Understand Responsive Web Design, Sass, Redux, RESTfull APIs. Strong proficiency in JavaScript, logical thinking and troubleshooting. Passion in software engineering, especially in building rich applications.
               </p>
             </div>
           </div>
