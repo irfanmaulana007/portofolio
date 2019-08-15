@@ -20,11 +20,16 @@ body {
 	width: 100%;
 	position: absolute;
 	margin-top: -60px;
-	background-color: rgba(0, 0, 0, .6);
+	background-color: rgba(0, 0, 0, .7);
 	z-index: 0;
 }
 
 .row { margin: 0!important;}
+
+td.block{
+	width: 1%;
+	white-space: nowrap;
+}
 
 .pt-nav{
 	padding-top: 60px;
