@@ -16,7 +16,7 @@ class index extends Component {
 					</div>
 					<br/><br/><br/>
 					<div className="row">
-						<div className="col-4">
+						<div className="col-6 col-md-4">
 							<div className="skill-item">
 								<div className="content">
 									<i className="fa fa-code mb-3"></i>
@@ -26,7 +26,7 @@ class index extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="col-4">
+						<div className="col-6 col-md-4">
 							<div className="skill-item">
 								<div className="content">
 									<i className="fa fa-map mb-3"></i>
@@ -35,7 +35,7 @@ class index extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="col-4">
+						<div className="col-6 col-md-4">
 							<div className="skill-item">
 								<div className="content">
 									<i className="fa fa-magic mb-3"></i>
@@ -43,9 +43,7 @@ class index extends Component {
 								</div>
 							</div>
 						</div>
-					</div>
-					<div className="row mt-4">
-						<div className="col-4 offset-2">
+						<div className="col-6 col-md-4 offset-md-2">
 							<div className="skill-item">
 								<div className="content">
 									<i className="fa fa-gears mb-3"></i>
@@ -54,7 +52,7 @@ class index extends Component {
 								</div>
 							</div>
 						</div>
-						<div className="col-4 offset-">
+						<div className="col-6 offset-3 col-md-4 offset-md-0">
 							<div className="skill-item">
 								<div className="content">
 									<i className="fa fa-code-fork mb-3"></i>

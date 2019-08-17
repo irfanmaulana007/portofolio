@@ -29,14 +29,20 @@ class index extends Component {
             </Typed>
           </h5>
           <br /><br /><br /><br /><br />
-          <div className="text-center">
-            <a href="#contact">
-              <button className="btn btn-danger mr-3">I need a website</button>
-            </a>
-            <a href="#contact">
-              <button className="btn btn-outline">I'm looking to hire</button>
-            </a>
+          <div className="row">
+            <div className="col-md-6 text-center">
+              <a href="#contact">
+                <button className="btn btn-danger mb-3">I need a website</button>
+              </a>
+            </div>
+            <div className="col-md-6 text-center">
+              <a href="#contact">
+                <button className="btn btn-outline">I'm looking to hire</button>
+              </a>
+            </div>
           </div>
+          {/* <div className="text-center">
+          </div> */}
           <br/>
           <div className="text-center">
               <a href="https://www.linkedin.com/in/irfan-maulana-0a6504143/" target="_blank" rel="noopener noreferrer" className="text-light small">Visit my Linkedin</a>

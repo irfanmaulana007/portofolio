@@ -47,7 +47,7 @@ class index extends Component {
 			<div id="contact" className="h-100 pt-nav">
 				<div className="container">
 					<div className="row">
-						<div className="col-6 offset-3">
+						<div className="col-md-6 offset-md-3">
 							<Title text="Drop a line" />
 							<br/>
 							<form className="small">

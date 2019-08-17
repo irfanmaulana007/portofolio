@@ -8,7 +8,7 @@ class Project extends Component {
 		const { data } = this.props
 		if (data.image === '') { data.image = 'noimg.jpg' }
 		return (
-			<div className="col-3 pb-5">
+			<div className="col-md-3 pb-5">
 				<div className="card">
 					<div className="card-header">
 						{data.name}
@@ -18,6 +18,10 @@ class Project extends Component {
 							<div className="content">
 								<h5><Moment format="DD MMMM YYYY">{data.date}</Moment></h5>
 								<p>{data.description}</p>
+								{
+									data.link !== '' &&
+									<a href={data.link} target="_blank" rel="noopener noreferrer" className="text-white">visit</a>
+								}
 							</div>
 						</div>
 						<center>
@@ -25,21 +29,6 @@ class Project extends Component {
 						</center>
 					</div>
 				</div>
-				{/* <div className="card">
-					<div className="p-3">
-						<h6 className="m-0 text-capitalize text-center">{data.name}</h6>
-					</div>
-					<hr className="m-0 w-100 border-light" />
-					<div>
-						{
-							data.image === ''
-							?
-							(<img src={noImage} alt="" height="200px" width="100%" />)
-							:
-							(<img src={data.image} alt="" height="200px" width="100%" />)
-						}
-					</div>
-				</div> */}
 			</div>
 		)
 	}

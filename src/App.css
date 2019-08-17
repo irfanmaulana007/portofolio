@@ -24,8 +24,38 @@ body {
 	z-index: 0;
 }
 
-.row { margin: 0!important;}
+nav {
+    transition: .4s;
+}
+nav {
+    opacity: .97;
+    height: 50px;
+}
+nav.top {
+    background-color: transparent!important;
+    height: 70px;
+}
+nav.top ul a{
+    color: #fff!important;
+}
+.navbar-small { display: none!important; }
+.navbar-small .content {
+	width: 70%;
+	height: 100%;
+	position: fixed;
+	right: 0;
+	background-color: #22262a;
+	padding-top: 20px;
+}
+.navbar-small .content .item {
+	width: 100%;
+	padding: 5px 0px;
+	text-align: center;
+	border-bottom: 1px solid #666;
+}
 
+.row { margin: 0!important;}
+.btn { white-space: nowrap; }
 td.block{
 	width: 1%;
 	white-space: nowrap;
@@ -63,4 +93,41 @@ ul.list-tech {
 ul.list-tech li {
 	margin-top: 6px;
 	margin-bottom: 6px;
+}
+
+#profile img {
+	max-height: 360px;
+}
+
+@media only screen and (max-width: 992px) {
+	.navbar-large{ display: none!important; }
+	.navbar-small{ display: block!important; }
+	nav.pl-5{
+		padding-left: 20px!important;
+	}
+	nav.pr-5{
+		padding-right: 20px!important;
+	}
+
+	nav.top {
+		background-color: #22262a!important;
+	}
+
+	nav i {
+		font-size: 24px!important;
+	}
+	nav .nav-link { padding: 6px 8px!important; }
+	nav .nav-link:hover, nav .nav-link.active {
+		cursor: pointer!important;
+		color: #fff!important;
+	}
+	
+	.navbar-brand {
+		font-size: 14px!important;
+	}
+	
+	#skill [class*="col-"] { padding: 0px 5px; }
+	.skill-item { height: 180px; }
+	.skill-item .content i { font-size: 30px!important; }
+	.skill-item .content p { font-size: 10px; }
 }
