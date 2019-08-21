@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 import { profileService } from '../../common/api.service'
 import store from '../../store'
 import { startLoading, stopLoading } from '../../actions'
-import imgProfile from './../../assets/img/pict.jpg'
+import imgProfile from './../../assets/img/pict.png'
 
 class index extends Component {
   constructor (props) {
