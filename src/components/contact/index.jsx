@@ -26,7 +26,7 @@ class index extends Component {
 			.then(() => {
 				swal({
 					title: 'Mail sent',
-					text: 'Thankyou for your mail, we will response as soon as possible to your email.',
+					text: 'Thank You for Your mail, We will response as soon as possible to Your email.',
 					icon: 'success',
 					timer: 5000
 				})

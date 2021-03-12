@@ -39,16 +39,16 @@ const apiService = {
 				const response = _.get(res, 'data', [])
 				return response
 			})
-			.catch((err) => {
-				swal({
-					title: 'Login ' + err.response.statusText,
-					text: err.response.data,
-					icon: 'error',
-					timer: 5000
-				})
+			// .catch((err) => {
+			// 	swal({
+			// 		title: 'Login ' + err.response.statusText,
+			// 		text: err.response.data,
+			// 		icon: 'error',
+			// 		timer: 5000
+			// 	})
 
-				throw err
-			})
+			// 	throw err
+			// })
 	},
 
 	delete (resource) {

@@ -8,7 +8,7 @@ class Project extends Component {
 		const { data } = this.props
 		if (data.image === '') { data.image = 'noimg.jpg' }
 		return (
-			<div className="col-md-3 pb-5">
+			<div id="project" className="col-md-3 pb-5">
 				<div className="card">
 					<div className="card-header">
 						{data.name}
@@ -25,7 +25,9 @@ class Project extends Component {
 							</div>
 						</div>
 						<center>
-							<img src={require(`./../../assets/img/project/${data.image}`)} alt="" height="200px" width="200px" />
+							<div className="box">
+								<img src={require(`./../../assets/img/project/${data.image}`)} alt="" />
+							</div>
 						</center>
 					</div>
 				</div>

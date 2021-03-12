@@ -23,6 +23,7 @@ class index extends Component {
 									<p>Building</p>
 									<p>- Website Portofolio</p>
 									<p>- Company Profile</p>
+									<p>- Custom SPAs</p>
 								</div>
 							</div>
 						</div>
@@ -30,8 +31,10 @@ class index extends Component {
 							<div className="skill-item">
 								<div className="content">
 									<i className="fa fa-map mb-3"></i>
-									<p>Responsive Web</p>
-									<p>Design</p>
+									<p>Responsive Web Design</p>
+									<p>- Desktop View</p>
+									<p>- Tab View</p>
+									<p>- Mobile View</p>
 								</div>
 							</div>
 						</div>
@@ -49,6 +52,7 @@ class index extends Component {
 									<i className="fa fa-gears mb-3"></i>
 									<p>Web Service</p>
 									<p>RESTful APIs</p>
+									<p>- Laravel</p>
 								</div>
 							</div>
 						</div>
@@ -56,9 +60,8 @@ class index extends Component {
 							<div className="skill-item">
 								<div className="content">
 									<i className="fa fa-code-fork mb-3"></i>
-									<p>Versioning</p>
-									<p>and</p>
-									<p>Maintain Project</p>
+									<p>Versioning Control</p>
+									<p>- Github</p>
 								</div>
 							</div>
 						</div>

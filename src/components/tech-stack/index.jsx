@@ -23,7 +23,6 @@ class index extends Component {
 								<li>SASS</li>
 								<li>ReactJs</li>
 								<li>Redux</li>
-								<li>VueJs</li>
 							</ul>
 						</div>
 						<div className="col border-right">
@@ -32,6 +31,7 @@ class index extends Component {
 							<ul className="p-0 list-unstyled list-tech">
 								<li>Adobe Illustrator</li>
 								<li>Adobe Photoshop</li>
+								<li>Adobe Experience Design</li>
 							</ul>
 						</div>
 						<div className="col">

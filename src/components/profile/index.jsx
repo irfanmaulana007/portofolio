@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 import { profileService } from '../../common/api.service'
 import store from '../../store'
 import { startLoading, stopLoading } from '../../actions'
-import imgProfile from './../../assets/img/pict.png'
+import imgProfile from './../../assets/img/pict.jpg'
 
 class index extends Component {
   constructor (props) {
@@ -23,7 +23,7 @@ class index extends Component {
       const currentMonth = date.getMonth()
       const year = parseInt(exp.substring(0,4))
       const month = parseInt(exp.substring(5,7))
-      const experience = (currentYear - year) + ' year ' + (currentMonth - month) + ' month'
+      const experience = (currentYear - year) + ' years ' + (currentMonth + 1 - month) + ' months'
       this.setState({
         city: data.city,
         company: data.company,
@@ -49,8 +49,8 @@ class index extends Component {
 			<div id="profile" className="pt-nav pb-nav">
 				<div className="container">
 					<div className="row">
-						<div className="col-md-4 mb-4">
-							<img src={imgProfile} width="100%" alt="" className="border" />
+						<div className="col-md-4 mb-4 text-center">
+							<img src={imgProfile} alt="" className="border" />
 						</div>
 						<div className="col-md-8">
 							<h5><b>Personal Information</b></h5>
@@ -86,8 +86,8 @@ class index extends Component {
 
 					<div className="row">
 						<div className="col-md">
-							<p>I start learn programming languange since senior highschool. I love software engineering and i like to learn something new technology day by day.</p>
-							<p>Experienced Full Stack Developer focus on ReactJS & Laravel. Understand Responsive Web Design, Sass, Redux, RESTfull APIs. Strong proficiency in JavaScript, logical thinking and troubleshooting. Passion in software engineering, especially in building rich applications.</p>
+							<p>I'm a website developer with a focus on front end development. I'm hardworking, diligent, and dedicated—all qualities I put forward in everything I do.</p>
+							<p>I interested in frontend development and I will be mastering that. I have experience in backend development also, I'm using PHP (Laravel) for developing a backend for building APIs, and using ReactJS to develop the frontend.</p>
 						</div>
 					</div>
 				</div>
